@@ -12,4 +12,11 @@ RSpec.describe "Offset" do
 
     expect([22,27,71,15]).to eql(off_set.format_key("22715"))
   end
+
+  it "forms the date into 4 separate parts" do
+    off_set = Offset.new
+    off_set.offset_date("1995-08-15")
+
+    expect([1,0,2,5]).to eql(off_set.offset_date("1995-08-15"))
+  end
 end
