@@ -1,5 +1,4 @@
 require 'date'
-require 'pry'
 
 class Offset
   attr_reader :key, :date
