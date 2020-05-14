@@ -15,8 +15,15 @@ RSpec.describe "Offset" do
 
   it "forms the date into 4 separate parts" do
     off_set = Offset.new
-    off_set.offset_date("1995-08-15")
+    off_set.format_offset_date("1995-08-15")
 
-    expect([1,0,2,5]).to eql(off_set.offset_date("1995-08-15"))
+    expect([1,0,2,5]).to eql(off_set.format_offset_date("1995-08-15"))
+  end
+
+  it "combines together key and offset_date" do
+    off_set = Offset.new
+    off_set = off_set.combine([22,27,71,15], [1,0,2,5])
+
+    expect(off_set).to eql([23,27,73,20])
   end
 end
