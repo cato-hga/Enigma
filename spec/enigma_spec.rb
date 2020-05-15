@@ -8,6 +8,7 @@ RSpec.describe "Enigma" do
 
   it "encrypts message" do
     e = Enigma.new
-    e.encrypt("hello world", "02715", "040895")
+    e = e.encrypt("hello world", "02715", "1995-08-04")
+    expect(e).to eql({encryption: "keder ohulw", key: "02715", date: "040895"})
   end
 end
